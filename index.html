@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple Calculator</title>
+    <link rel="shortcut icon" href="./src/assets/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/tailwindcss">
+      @layer components {
+        .calc-screen{
+          @apply w-full h-24 bg-slate-700 text-white text-right text-4xl
+          px-5 box-border border-2 border-white;
+        }
+        .btn-number, .all-clear, .percentage, .decimal {
+          @apply bg-slate-300 box-border border-2 border-white w-1/4 px-8
+          py-5 hover:bg-slate-500 duration-300 text-xl hover:text-white;
+        }
+        .btn-operation, .equal-sign {
+          @apply bg-orange-300 box-border border-2 border-white w-1/4 px-8
+          py-5 hover:bg-orange-500 duration-300 text-2xl hover:text-white;
+        }
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+          // Tidak ada konfigurasi dibutuhkan
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="md:flex bg-gradient-to-bl from-slate-700 to-orange-300">
+      <div class="text-center m-auto py-32 w-96">
+        <input type="text" value="0" class="rounded-t-2xl calc-screen" disabled />
+        <div class="w-full">
+          <div class="flex">
+            <button class="w-1/2 all-clear">AC</button>
+            <button class="percentage">%</button>
+            <button class="btn-operation" value="/">&divide</button>
+          </div>
+          <div class="flex">
+            <button class="btn-number" value="7">7</button>
+            <button class="btn-number" value="8">8</button>
+            <button class="btn-number" value="9">9</button>
+            <button class="btn-operation" value="*">&times</button>
+          </div>
+          <div class="flex">
+            <button class="btn-number" value="4">4</button>
+            <button class="btn-number" value="5">5</button>
+            <button class="btn-number" value="6">6</button>
+            <button class="btn-operation" value="-">-</button>
+          </div>
+          <div class="flex">
+            <button class="btn-number" value="1">1</button>
+            <button class="btn-number" value="2">2</button>
+            <button class="btn-number" value="3">3</button>
+            <button class="btn-operation" value="+">+</button>
+          </div>
+          <div class="flex">
+            <button class="btn-number w-1/2 rounded-bl-2xl" value="0">0</button>
+            <button class="decimal" value=".">.</button>
+            <button class="equal-sign rounded-br-2xl">=</button>
+          </div>
+        </div>
+      </div>
+      <div class="text-center m-auto pb-8 w-96">
+        <div class="w-full">
+          <div class="flex">
+            <div class="w-1/4">
+              <img src="./src/assets/icon.png" alt="">
+            </div>
+            <div class="w-3/4 text-center text-white m-auto">
+              <h1 class="text-4xl">Simple Calculator</h1>
+              <p>v0.1.0</p>
+            </div>
+          </div>
+          <div class="flex">
+            <div class="w-full text-center bg-gray-200 my-2 py-2 rounded-full">
+              <h1 class="text-xl">An Individual Project for FGAxProgate</h1>
+              <p>by Putra Nanda S</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./src/js/app.js"></script>
+  </body>
+</html>
