@@ -45,21 +45,29 @@ operators.forEach((operator) => {
 
 const calculate = () => {
   let result = '';
-  switch(calculationOperator) {
-    case '+': 
-      result = (parseFloat(prevNumber * 10) + parseFloat(currentNumber * 10)) / 10;
-      break;
-    case '-':
-      result = (parseFloat(prevNumber * 10) - parseFloat(currentNumber * 10)) / 10;
-      break;
-    case '*':
-      result = parseFloat(prevNumber) * parseFloat(currentNumber);
-      break;
-    case '/':
-      result = parseFloat(prevNumber) / parseFloat(currentNumber);
-      break;
-    default:
-      break;
+  if (currentNumber === '0' && calculationOperator === ''){
+    result = currentNumber;
+  } else if (currentNumber !=='0' && calculationOperator === ''){
+    result = currentNumber;
+  } else if (currentNumber !=='0' && calculationOperator !== '' && prevNumber === ''){
+    result = currentNumber;
+  } else {  
+    switch (calculationOperator) {
+      case '+': 
+        result = (parseFloat(prevNumber * 10) + parseFloat(currentNumber * 10)) / 10;
+        break;
+      case '-':
+        result = (parseFloat(prevNumber * 10) - parseFloat(currentNumber * 10)) / 10;
+        break;
+      case '*':
+        result = parseFloat(prevNumber) * parseFloat(currentNumber);
+        break;
+      case '/':
+        result = parseFloat(prevNumber) / parseFloat(currentNumber);
+        break;
+      default:
+        break;
+    }
   }
   currentNumber = result;
   calculationOperator = '';
